@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parseApi": "typedapi-parse src/ChatApi.ts ChatApi ../client/src/apiFactory.ts src/apiReflection.ts",
+    "start": "tsc && node build/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typedapi-core": "^0.3.1",
+    "typedapi-server": "^0.3.1",
+    "typedapi-server-ws": "0.3.1-0"
+  },
+  "devDependencies": {
+    "typedapi-parser": "0.3.1-1"
+  }
+}

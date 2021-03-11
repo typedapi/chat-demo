@@ -1,0 +1,43 @@
+#chat-main-table {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#chat-main-table td {
+    border: 1px solid #ccc;
+    vertical-align: top;
+}
+#chat-users {
+    width: 150px;
+}
+#chat-form {
+    height: 30px;
+}
+.chat-item{
+    margin: 5px;
+    width: 100%;
+    max-width: 400px;    
+    border-radius: 3px;
+    padding: 3px;
+}
+.join-chat-item {
+    font-size: 0.7em;
+}
+.leave-chat-item {
+    font-size: 0.7em;
+}
+.message-chat-item {
+    background: #ccc;
+    border: 1px solid #666;
+}
+.name-update-chat-item {
+    font-size: 0.7em;
+}
+.online-user {
+    background: #ddd;
+    font-size: 0.7em;
+    border: 1px solid #666;
+    margin-top: 5px;
+}

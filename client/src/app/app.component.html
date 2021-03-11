@@ -1,0 +1,40 @@
+<table id="chat-main-table">
+    <tr>
+        <td id="chat-content">
+            <div *ngFor="let msg of chat.messages">
+                <div *ngIf="msg.type === 'join'" class="join-chat-item chat-item">
+                    Joined {{msg.user!.name}} #{{msg.user!.id}}
+                </div>
+                <div *ngIf="msg.type === 'leave'" class="leave-chat-item chat-item">
+                    Leaved {{msg.user!.name}} #{{msg.user!.id}}
+                </div>                
+                <div *ngIf="msg.type === 'message'" class="message-chat-item chat-item">
+                    <b>{{msg.user!.name}} #{{msg.user!.id}}</b>: {{msg.message}}
+                </div>    
+                <div *ngIf="msg.type === 'nameUpdate'" class="name-update-chat-item chat-item">
+                    {{msg.message}}
+                </div>    
+
+            </div>
+        </td>
+        <td id="chat-users" rowspan=2>
+            Users online: {{chat.usersOnline.length}}
+            <div *ngFor="let user of chat.usersOnline" class="online-user">
+                {{user.name}} #{{user.id}}
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td id="chat-form">
+            Your name: <b>{{ chat.name }}</b> <button (click)="changeNameClicked()">Rename</button><br/><br/>
+            <div *ngIf="chat.name !== 'Unnamed'">
+                <input type="text" placeholder="Message" inputmode="text" [(ngModel)]="sendMessage" (keyup.enter)="sendClicked()">
+                <button (click)="sendClicked()">Send</button>
+            </div>
+            <div *ngIf="chat.name === 'Unnamed'">
+                change name to send messages
+            </div>            
+
+        </td>
+    </tr>
+</table>
